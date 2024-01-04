@@ -1,3 +1,51 @@
 body {
-    background-color: grey;
+    background: grey;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+}
+
+nav h1 {
+    display: inline-block;
+}
+
+header {
+    height: 100vh;
+    background-color: black;
+    background-image: url(./assests/images/414182484_216072921554232_6517383506045992218_n.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+section {
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0 10px;
+    list-style-type: none;
+    background-color: transparent;
+}
+
+li {
+    display: inline-block;
+    background-color: orange;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+li:first-child {
+    margin-left: 0;
+}
+
+.about {
+    background: black;
 }
