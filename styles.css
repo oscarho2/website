@@ -8,6 +8,8 @@ body {
 nav {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
 }
 
 nav h1 {
@@ -15,13 +17,31 @@ nav h1 {
 }
 
 header {
-    height: 100vh;
+    height: 25vh;
     background-color: black;
-    background-image: url(./assests/images/414182484_216072921554232_6517383506045992218_n.jpg);
+    background-image: url(./assests/images/website-hero.png);
     background-size: 100%;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    margin-top: 65px;
+}
 
+@media  (min-width: 500px) {
+    header {
+        height: 30vh;
+    }
+}
+
+@media  (min-width: 800px) {
+    header {
+        height: 50vh;
+    }
+}
+
+@media  (min-width: 1200px) {
+    header {
+        height: 100vh;
+    }
 }
 
 section {
@@ -32,7 +52,7 @@ ul {
     margin: 0;
     padding: 0 10px;
     list-style-type: none;
-    background-color: transparent;
+    background-color: black;
 }
 
 li {
@@ -48,4 +68,13 @@ li:first-child {
 
 .about {
     background: black;
+}
+
+html {
+    scroll-padding-top: 65px;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
 }
