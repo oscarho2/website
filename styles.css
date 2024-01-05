@@ -1,5 +1,5 @@
 body {
-    background: grey;
+    background: black;
     color: white;
     margin: 0;
     padding: 0;
@@ -46,15 +46,11 @@ header {
     }
 }
 
-section {
-    padding: 20px;
-}
-
 ul {
     margin: 0;
     padding: 0 10px;
     list-style-type: none;
-    background-color: black;
+    background-color: darkblue;
 }
 
 li {
@@ -68,8 +64,14 @@ li:first-child {
     margin-left: 0;
 }
 
+.video {
+    background-color: grey;
+    padding: 3vh 0px;
+    width: 100%;
+}
+
 .about {
-    background-color: black;
+    background-color: ;
 }
 
 html {
