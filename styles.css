@@ -17,7 +17,10 @@ nav {
     height: 45px;
     display: flex;
     align-items: center;
+    font-size: 12px;
 }
+
+
 
 nav:hover {
     opacity: 1;
@@ -81,7 +84,6 @@ h2 {
 .video {
     background-color: black;
     padding: 3vh 0px;
-
 }
 
 .about {
