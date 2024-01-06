@@ -68,7 +68,22 @@ header {
     margin-top: 45px;
 }
 
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 45vh;
+    padding: 0 55vw 0 5vw;
+    margin: 0;
+}
 
+.quote p {
+    margin: 0;
+    margin-top: 15px;
+    text-align: center;
+}
 
 ul {
     margin: 0 auto;
@@ -77,10 +92,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-ul:first-child {
-    
 }
 
 li {
