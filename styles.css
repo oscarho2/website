@@ -26,7 +26,17 @@ nav {
     font-size: 12px;
 }
 
-
+nav a{
+    transition: opacity .5s ease-in-out;
+  }
+  
+  nav:hover a {
+    opacity: 0.25;
+  }
+  
+  nav:hover a:hover {
+    opacity: 1;
+  }
 
 nav a {
     text-decoration: none;
@@ -45,6 +55,10 @@ nav h1 {
 
 nav a {
     padding: 1vh 1vw;
+}
+
+a:hover {
+    transition: background-color .5s ease-in;
 }
 
 header {
