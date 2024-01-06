@@ -26,17 +26,7 @@ nav {
     font-size: 12px;
 }
 
-nav a{
-    transition: opacity .25s ease-in-out;
-  }
-  
-  nav:hover a {
-    opacity: 0.25;
-  }
-  
-  nav:hover a:hover {
-    opacity: 1;
-  }
+
 
 nav a {
     text-decoration: none;
