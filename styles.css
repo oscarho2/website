@@ -58,7 +58,7 @@ nav a {
 }
 
 a:hover {
-    transition: background-color .5s ease-in;
+    transition: color .25s ease-in-out;
 }
 
 header {
@@ -108,7 +108,7 @@ li:first-child {
 }
 
 nav a:hover {
-    background-color: brown;
+    color: brown;
 }
 
 h2 {
@@ -130,7 +130,7 @@ h3{
 
 .about {
     background-color: grey;
-    padding: 1vh 10vw;
+    padding: 1vh 10vw 5vh 10vw;
 }
 
 .about p {
@@ -150,7 +150,7 @@ html {
 
 .media {
     background-color: brown;
-    padding: 1vh 10vw;
+    padding: 1vh 10vw 5vh 10vw;
     box-sizing: border-box;
 }
 
@@ -200,21 +200,46 @@ html {
   form {
     display: flex;
     flex-direction: column;
+    margin: 0 10vw 20px 10vw;
   }
 
   form input, form textarea {
-    margin: 0 1vw 20px 1vw;
-    padding: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    padding: 1vh 1vw 1vh 1vw;
   }
 
   form textarea {
     padding-bottom: 10vw;
+    resize: none;
   }
 
   form button {
     margin-bottom: 2vh;
     width: 90px;
     align-self: flex-end;
+    background-color: grey;
+    color: white;
+  }
+
+  form .name {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .name input {
+    width: 45%;
+  }
+
+  button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  button {
+    transition: background-color 0.25s ease-in-out;
   }
 
   footer {
