@@ -67,7 +67,7 @@
     <section>
         <div class="contact">
             <h2 id="contact">Contact</h2>
-            <form>
+            <form onsubmit="sendEmail(); reset(); return false">
                 <div class="name">
                     <input type="text" id="fistname" placeholder="First Name" required></input>
                     <input type="text" id="lastname" placeholder="Last Name" required></input>
@@ -77,6 +77,24 @@
                 <button type="submit">Send</button>
             </form>
         </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "khailrhon@gmail.com",
+                    Password : "hohohoho8987",
+                    To : 'oscarhomusic@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Contact Form Enquiry",
+                    Body : "Name: " + document.getElementById("firstname").value
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br> Message: " + document.getElementById("message").value
+                }).then(
+                message => alert("Message Sent Succesfully")
+                );
+            }
+        </script>
     </section>
     <footer>
         <div>
