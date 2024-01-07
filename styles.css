@@ -9,6 +9,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -114,13 +115,14 @@ nav a:hover {
 h2 {
     border-bottom: 3px solid #dfdfe2;
     margin-top: 0;
-    padding-top: 4vh;
+    padding-top: 3vh;
 }
 
 h3{
     text-align: center;
     border-bottom: 3px solid #dfdfe2;
     margin: 0 20vw 16px 20vw;
+    padding-top: 4vh;
 }
 
 .video {
@@ -207,6 +209,8 @@ html {
     padding: 5px;
     margin-bottom: 10px;
     padding: 1vh 1vw 1vh 1vw;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   form textarea {
@@ -217,9 +221,11 @@ html {
   form button {
     margin-bottom: 2vh;
     width: 90px;
-    align-self: flex-end;
+    align-self: center;
     background-color: grey;
     color: white;
+    height: 40px;
+    padding: 10px 15px 10px 15px;
   }
 
   form .name {
@@ -240,9 +246,34 @@ html {
 
   button {
     transition: background-color 0.25s ease-in-out;
+    border-radius: 10px;
+    border: 2px solid brown;
   }
 
   footer {
     background-color: grey;
     height: 25vh;
+  }
+
+  footer .social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .social a {
+    color: white;
+    margin: 1vh 2vw 1vh 2vw;
+    font-size: 20px;
+  }
+
+  .social {
+    position: relative;
+    margin: 0 34vw 0 34vw;
+    top: 18vh;
+  }
+
+  .social:hover {
+    opacity: 0.5;
   }
