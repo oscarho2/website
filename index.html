@@ -67,34 +67,16 @@
     <section>
         <div class="contact">
             <h2 id="contact">Contact</h2>
-            <form onsubmit="sendEmail(); reset(); return false">
+            <form action="https://formsubmit.co/oscarhomusic@gmail.com" method="POST">
                 <div class="name">
-                    <input type="text" id="fistname" placeholder="First Name" required></input>
-                    <input type="text" id="lastname" placeholder="Last Name" required></input>
+                    <input type="text" name="fist-name" placeholder="First Name" required></input>
+                    <input type="text" name="last-name" placeholder="Last Name" required></input>
                 </div>
-                <input type="email" id="email" placeholder="Email" required></input>
-                <textarea rows="3" id="message" placeholder="Enter your message" required></textarea>
+                <input type="email" name="email" placeholder="Email" required></input>
+                <textarea rows="3" name="message" placeholder="Enter your message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script>
-            function sendEmail(){
-                Email.send({
-                    Host : "smtp.gmail.com",
-                    Username : "khailrhon@gmail.com",
-                    Password : "password",
-                    To : 'oscarhomusic@gmail.com',
-                    From : document.getElementById("email").value,
-                    Subject : "New Contact Form Enquiry",
-                    Body : "Name: " + document.getElementById("firstname").value
-                        + "<br> Email: " + document.getElementById("email").value
-                        + "<br> Message: " + document.getElementById("message").value
-                }).then(
-                message => alert("Message Sent Succesfully")
-                );
-            }
-        </script>
     </section>
     <footer>
         <div>
