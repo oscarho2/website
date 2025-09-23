@@ -5,18 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscar Ho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header  id="home">
      <nav>
-        <ul>
-        <h1><a href="#home">Oscar Ho</a></h1>
-        <li><a href="#about">About</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-inner">
+          <h1 class="brand"><a href="#home">Oscar Ho</a></h1>
+          <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul id="primary-nav" class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
     </nav>
     <div class="quote">
         <p>"...in the 'as good as they come' category..."</p>
@@ -50,20 +58,23 @@
                 <iframe src="https://www.youtube.com/embed/STkMghyvy5E?si=b1ApxpK4wo2FT9-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <h3>Photos</h3>
-            <div class="gallery">
-                <img src="./assests/images/331434057_478866434292553_1475248554937127159_n.jpg" loading="lazy">
-                <img src="./assests/images/331546897_140389525569218_189291279098317481_n.jpg" loading="lazy">
-                <img src="./assests/images/414175328_1303218047038373_1706173232280948484_n.jpg" loading="lazy">
-                <img src="./assests/images/414182484_216072921554232_6517383506045992218_n.jpg" loading="lazy">
-                <img src="./assests/images/416009030_338097315744289_5742967449418858143_n.jpg" loading="lazy">
-                <img src="./assests/images/416088205_328277180026415_62392645132771760_n.jpg" loading="lazy">
-                <img src="./assests/images/416244561_2014360888945526_810248843789314921_n.jpg" loading="lazy">
-                <img src="./assests/images/CSOBH_009.jpg" loading="lazy">
-                <img src="./assests/images/CSOBH_017.jpg" loading="lazy">
-                <img src="./assests/images/CSOBH_061.jpg" loading="lazy">
-                <img src="./assests/images/CSOBH_065.jpg" loading="lazy">
-                <img src="./assests/images/CSOBH_071.jpg" loading="lazy">
-            </div>
+            <div id="photo-gallery-root"></div>
+            <noscript>
+                <div class="gallery">
+                    <img src="./assests/images/331434057_478866434292553_1475248554937127159_n.jpg" loading="lazy" alt="Photo 1">
+                    <img src="./assests/images/331546897_140389525569218_189291279098317481_n.jpg" loading="lazy" alt="Photo 2">
+                    <img src="./assests/images/414175328_1303218047038373_1706173232280948484_n.jpg" loading="lazy" alt="Photo 3">
+                    <img src="./assests/images/414182484_216072921554232_6517383506045992218_n.jpg" loading="lazy" alt="Photo 4">
+                    <img src="./assests/images/416009030_338097315744289_5742967449418858143_n.jpg" loading="lazy" alt="Photo 5">
+                    <img src="./assests/images/416088205_328277180026415_62392645132771760_n.jpg" loading="lazy" alt="Photo 6">
+                    <img src="./assests/images/416244561_2014360888945526_810248843789314921_n.jpg" loading="lazy" alt="Photo 7">
+                    <img src="./assests/images/CSOBH_009.jpg" loading="lazy" alt="Photo 8">
+                    <img src="./assests/images/CSOBH_017.jpg" loading="lazy" alt="Photo 9">
+                    <img src="./assests/images/CSOBH_061.jpg" loading="lazy" alt="Photo 10">
+                    <img src="./assests/images/CSOBH_065.jpg" loading="lazy" alt="Photo 11">
+                    <img src="./assests/images/CSOBH_071.jpg" loading="lazy" alt="Photo 12">
+                </div>
+            </noscript>
         </div>
     </section>
     <section>
@@ -88,5 +99,148 @@
             <a href="https://open.spotify.com/user/khailrhon?si=04bf93e021584991"><i class="fab fa-spotify"></i></a>
         </div>
     </footer>
-</body>
-</html>
+    
+    <!-- React + ReactDOM via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for inline JSX (small site use) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const images = [
+        './assests/images/331434057_478866434292553_1475248554937127159_n.jpg',
+        './assests/images/331546897_140389525569218_189291279098317481_n.jpg',
+        './assests/images/414175328_1303218047038373_1706173232280948484_n.jpg',
+        './assests/images/414182484_216072921554232_6517383506045992218_n.jpg',
+        './assests/images/416009030_338097315744289_5742967449418858143_n.jpg',
+        './assests/images/416088205_328277180026415_62392645132771760_n.jpg',
+        './assests/images/416244561_2014360888945526_810248843789314921_n.jpg',
+        './assests/images/CSOBH_009.jpg',
+        './assests/images/CSOBH_017.jpg',
+        './assests/images/CSOBH_061.jpg',
+        './assests/images/CSOBH_065.jpg',
+        './assests/images/CSOBH_071.jpg',
+      ];
+
+      function useBodyLock(locked) {
+        React.useEffect(() => {
+          if (locked) {
+            const prev = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            return () => { document.body.style.overflow = prev; };
+          }
+        }, [locked]);
+      }
+
+      function Lightbox({ open, index, onClose, onPrev, onNext, images }) {
+        useBodyLock(open);
+        const imgRef = React.useRef(null);
+        const total = images.length;
+
+        React.useEffect(() => {
+          if (!open) return;
+          const onKey = (e) => {
+            if (e.key === 'Escape') onClose();
+            if (e.key === 'ArrowRight') onNext();
+            if (e.key === 'ArrowLeft') onPrev();
+          };
+          window.addEventListener('keydown', onKey);
+          return () => window.removeEventListener('keydown', onKey);
+        }, [open, onClose, onNext, onPrev]);
+
+        React.useEffect(() => {
+          if (!open) return;
+          const linkPrev = new Image();
+          const linkNext = new Image();
+          linkPrev.src = images[(index - 1 + total) % total];
+          linkNext.src = images[(index + 1) % total];
+        }, [open, index, images, total]);
+
+        // touch swipe
+        React.useEffect(() => {
+          if (!open) return;
+          let startX = 0, dx = 0;
+          const onTouchStart = (e) => { startX = e.touches[0].clientX; };
+          const onTouchMove = (e) => { dx = e.touches[0].clientX - startX; };
+          const onTouchEnd = () => {
+            if (dx > 60) onPrev(); else if (dx < -60) onNext();
+            startX = 0; dx = 0;
+          };
+          const el = imgRef.current;
+          if (!el) return;
+          el.addEventListener('touchstart', onTouchStart, { passive: true });
+          el.addEventListener('touchmove', onTouchMove, { passive: true });
+          el.addEventListener('touchend', onTouchEnd);
+          return () => {
+            el.removeEventListener('touchstart', onTouchStart);
+            el.removeEventListener('touchmove', onTouchMove);
+            el.removeEventListener('touchend', onTouchEnd);
+          };
+        }, [open, onPrev, onNext]);
+
+        if (!open) return null;
+        return (
+          <div className="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={onClose}>
+            <div className="lb-content" onClick={(e) => e.stopPropagation()}>
+              <button className="lb-close" aria-label="Close" onClick={onClose}>
+                <i className="fa-solid fa-xmark" />
+              </button>
+              <button className="lb-nav lb-prev" aria-label="Previous" onClick={onPrev}>
+                <i className="fa-solid fa-chevron-left" />
+              </button>
+              <figure className="lb-figure">
+                <img ref={imgRef} className="lb-img" src={images[index]} alt={`Photo ${index + 1} of ${total}`} />
+                <figcaption className="lb-caption">{index + 1} / {total}</figcaption>
+              </figure>
+              <button className="lb-nav lb-next" aria-label="Next" onClick={onNext}>
+                <i className="fa-solid fa-chevron-right" />
+              </button>
+            </div>
+          </div>
+        );
+      }
+
+      function PhotoGrid({ images }) {
+        const [open, setOpen] = React.useState(false);
+        const [index, setIndex] = React.useState(0);
+        const openAt = (i) => { setIndex(i); setOpen(true); };
+        const onClose = () => setOpen(false);
+        const onPrev = () => setIndex((i) => (i - 1 + images.length) % images.length);
+        const onNext = () => setIndex((i) => (i + 1) % images.length);
+
+        return (
+          <>
+            <div className="gallery">
+              {images.map((src, i) => (
+                <img key={i} src={src} alt={`Photo ${i + 1}`} loading="lazy" onClick={() => openAt(i)} />
+              ))}
+            </div>
+            <Lightbox open={open} index={index} onClose={onClose} onPrev={onPrev} onNext={onNext} images={images} />
+          </>
+        );
+      }
+
+      const rootEl = document.getElementById('photo-gallery-root');
+      if (rootEl) {
+        const root = ReactDOM.createRoot(rootEl);
+        root.render(<PhotoGrid images={images} />);
+      }
+    </script>
+    <script>
+      (function() {
+        const nav = document.querySelector('nav');
+        const btn = document.querySelector('.menu-toggle');
+        const links = document.querySelectorAll('.nav-links a');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', String(open));
+        });
+        links.forEach(a => a.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }));
+      })();
+    </script>
+  </body>
+  </html>
