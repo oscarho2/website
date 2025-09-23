@@ -177,7 +177,7 @@ h3{
 }
 
 html {
-    scroll-padding-top: 28px; /* was 56px; halve nav offset during smooth scroll */
+    scroll-padding-top: var(--nav-h);
 }
 
 .video iframe {
